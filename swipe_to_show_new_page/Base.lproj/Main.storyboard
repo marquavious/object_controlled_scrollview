@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +22,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-cg-LFQ">
-                                <rect key="frame" x="67" y="0.0" width="240" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-cg-LFQ">
+                                <rect key="frame" x="13" y="0.0" width="349" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.63959683599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.23475062469999999" blue="0.2962959463" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KaM-cg-LFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="IyF-PL-rkI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KaM-cg-LFQ" secondAttribute="bottom" id="Kub-tW-2KV"/>
+                            <constraint firstItem="KaM-cg-LFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-3" id="gaN-x4-Y9n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KaM-cg-LFQ" secondAttribute="trailing" constant="-3" id="t2E-2b-aWP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="KaM-cg-LFQ" id="YAM-uF-gdG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
