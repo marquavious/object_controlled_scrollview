@@ -29,10 +29,12 @@ class ViewController: UIViewController {
         
         //Loops through and add images to the images array
         for x in 0...4{
+            let textToShowInformation = UILabel()
             let viewToShowInformation = UIView()
+            
             if x % 2 == 1{
                 viewToShowInformation.backgroundColor = .orange
-            } else{
+            } else {
                 viewToShowInformation.backgroundColor = .green
             }
 
@@ -44,9 +46,20 @@ class ViewController: UIViewController {
             
             contentWidth += newX
             
+            textToShowInformation.text = "IT IS LIT"
+            textToShowInformation.backgroundColor = .yellow
+            textToShowInformation.translatesAutoresizingMaskIntoConstraints = false
+            textToShowInformation.textAlignment = .center
             scrollView.addSubview(viewToShowInformation)
+            viewToShowInformation.addSubview(textToShowInformation)
+      
             
             viewToShowInformation.frame = CGRect(x: newX, y:0, width: scrollviewWidth, height: scrollviewHeight)
+            
+            textToShowInformation.centerXAnchor.constraint(equalTo: viewToShowInformation.centerXAnchor).isActive = true
+            textToShowInformation.centerYAnchor.constraint(equalTo: viewToShowInformation.centerYAnchor).isActive = true
+            textToShowInformation.heightAnchor.constraint(equalToConstant: 31).isActive = true
+//            textToShowInformation.widthAnchor.constraint(equalToConstant: 100).isActive = true
         }
         
         scrollView.contentSize = CGSize(width: contentWidth, height:scrollviewHeight)
