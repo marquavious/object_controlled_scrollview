@@ -25,28 +25,31 @@ class ViewController: UIViewController {
         
         //Gets the width of the scroll view
         let scrollviewWidth = scrollView.frame.size.width
+        let scrollviewHeight = scrollView.frame.size.height
         
         //Loops through and add images to the images array
-        for x in 0...2{
-
-            
-            //Adds an image vire to a scroll view
+        for x in 0...4{
             let viewToShowInformation = UIView()
-            viewToShowInformation.backgroundColor = .orange
+            if x % 2 == 1{
+                viewToShowInformation.backgroundColor = .orange
+            } else{
+                viewToShowInformation.backgroundColor = .green
+            }
+
             images.append(viewToShowInformation)
             
             var newX: CGFloat = 0.0
             
-            newX = scrollviewWidth / 2 + scrollviewWidth * CGFloat(x)
+            newX = scrollviewWidth * CGFloat(x)
             
-            //Bruhhh......WHAT IS GOING ON
             contentWidth += newX
+            
             scrollView.addSubview(viewToShowInformation)
             
-            viewToShowInformation.frame = CGRect(x: newX - 75, y:( scrollView.frame.size.height / 2) - 75, width: 150, height: 150)
+            viewToShowInformation.frame = CGRect(x: newX, y:0, width: scrollviewWidth, height: scrollviewHeight)
         }
         
-        scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height)
+        scrollView.contentSize = CGSize(width: contentWidth, height:scrollviewHeight)
         scrollView.clipsToBounds = false
     }
     
