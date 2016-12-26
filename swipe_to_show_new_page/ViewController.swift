@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     // These can be images or whatever want
     var mainViews = [UIView]()
     
-    // This is an array of objects that are modeled off the SampleObjcet class we created earlier.
+    // This is an array of objects that are based off the SampleObjcet class we created earlier.
     // They all contain different strings to display. We will add the text as they are created
     var arrayOfSampleObjects = [
         SampleObject(sampleText: "Page 1"),SampleObject(sampleText: "Page 2"),
