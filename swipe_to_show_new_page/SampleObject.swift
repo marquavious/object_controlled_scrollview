@@ -8,6 +8,10 @@
 
 import Foundation
 
+// This is an example of a class that contains infromation.
+// For this simple example, were going to be showing diffrent text objects
+// form diffrent classes..
+
 class SampleObject {
     var sampleText: String?
     init(sampleText:String) {
